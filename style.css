@@ -1,0 +1,29 @@
+#quote-box {
+    background-color: #eff1f3;
+    display: table;
+    justify-content: space-between;
+    width: 500px;
+    font-family: "Helvetica", "Courier New", Sans-serif;
+    font-weight: 300;
+    padding: 30px;
+  }
+  
+  #quote-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    transition: background-color 1s linear !important;
+    color: white !important;
+  }
+  
+  body {
+    transition: background-color 1s linear;
+  }
+  
+  #text,
+  #author {
+    transition: color 1s linear;
+  }
+  
