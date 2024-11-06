@@ -48,11 +48,16 @@ $(document).ready(function () {
   }
   function getRandomQuote() {
     $.ajax({
-      url: "https://api.quotable.io/random",
-      method: "GET"
+      url: "https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/", // Proxy the request through CORS Anywhere
+      method: "GET",
+      data: {
+        method: "getQuote",
+        format: "json",
+        lang: "en"
+      }
     }).done(function (response) {
-      const quote = response.content;
-      const author = response.author;
+      const quote = response.quoteText;
+      const author = response.quoteAuthor || "Unknown Author";
       textElement.html(
         `<i class="fa fa-quote-left fa"></i> ${quote} <i class="fa fa-quote-right fa"></i>`
       );
